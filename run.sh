@@ -1,10 +1,14 @@
 #!/usr/bin/bash
 
-result=$(./unsin $1 | grep img)
-if [ -z "$result" ]; then
-    exit
+img=$1
+exname=${img##*\.}
+if [ "$exname" = "sin" ]; then
+    result=$(./unsin $1 | grep img)
+    if [ -z "$result" ]; then
+        exit
+    fi
+    img=${result##*/}
 fi
-img=${result##*/}
 
 git submodule foreach 'git clean -xdf'
 git submodule set-branch -b iNux Android-Image-Kitchen
