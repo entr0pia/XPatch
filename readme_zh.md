@@ -10,17 +10,21 @@
 
 ## 使用方法
 
-1. 从任何你能获取到 ```boot.img``` 的地方获取 ```boot.img``` 文件. 对于Sony Xperia的固件, 它可能的名字是 ```boot_X-FLASH-ALL-xxxx.sin```.
-2. 使用此脚本修改原厂 ```boot.img```, 支持Sony Xperia的 ```.sin``` 和常规的 ```.img``` 文件:
+1. 克隆此仓库:
+    ```shell
+    git clone --recurse-submodules https://github.com/entr0pia/XPatch.git
+    ```
 
+2. 从任何你能获取到 ```boot.img``` 的地方获取 ```boot.img``` 文件. 对于Sony Xperia的固件, 它可能的名字是 ```boot_X-FLASH-ALL-xxxx.sin```.
+
+3. 使用此脚本修改原厂 ```boot.img```, 支持Sony Xperia的 ```.sin``` 和常规的 ```.img``` 文件:
     ```shell
     # Linux (WSL2 also tested)
     ./run.sh path_to_boot_img_file
     ```
-    
     输出: ```image-new.img```
 
-3. 刷入 ```magisk```:
+4. 刷入 ```magisk```:
     - 方法一: 用 Magisk Manager 修补 ```image-new.img```, 将修补后的镜像复制到电脑, 然后重启手机到 ```bootloader```, 用 ```fastboot``` 将修补后的镜像刷入 ```boot``` 分区. 重启.
     - 方法二: 重启手机到 ```bootloader```, 用 ```fastboot``` 将 ```image-new.img``` 刷入 ```boot``` 分区, 然后重启手机到 ```recovery```, 刷入 ```magisk.zip``` 文件. 重启.
     
