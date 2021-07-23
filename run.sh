@@ -1,4 +1,8 @@
 #!/usr/bin/bash
+#作者: entr0pia (风沐白)
+#文件: run.sh
+#描述: 移除Android固件(如Sony Xpeira 5II)的boot.img中的system_ext分区, 修复patch magisk后的bootloop问题
+#版本: v1.0
 
 img=$1
 exname=${img##*\.}
