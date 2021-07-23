@@ -33,4 +33,4 @@ If your Android (especially Android 11) bootloop after patched ```magisk```, as 
 
 4. Flash Magisk:
     - Method 1: Use Magisk Manager to patch ```image-new.img```, copy the patched image to the computer, then reboot your phone to the ```bootloader```, and use ```fastboot``` to flash the patched image into the ```boot``` partition. Reboot.
-    - Method 2: Reboot your phone to the ```bootloader```, use ```fastboot``` to flash ```image-new.img``` into the ```boot``` partition, then reboot your phone to ```recovery```, flash the ```magisk.zip``` file. Restart.
+    - Method 2: Reboot your phone to the ```bootloader```, use ```fastboot``` to flash ```image-new.img``` into the ```boot``` partition, then reboot your phone to ```recovery```, flash the ```magisk.zip``` file. Reboot.
