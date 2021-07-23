@@ -20,7 +20,16 @@ If your Android (especially Android 11) bootloop after patched ```magisk```, as 
     # Linux (WSL2 also tested)
     ./run.sh path_to_boot_img_file
     ```
+    ```bat
+    # Windows (Experimentally, not Suggested)
+    .\run.bat path_to_boot_img_file
+    ```
     Outs: ```image-new.img```
+    - Fix: If the error is shown as **Unrecognized format** on Windows, replace the line endings of the following file by ```LF```:
+        ```
+        Android-Image-Kitchen\android_win_tools\androidbootimg.magic
+        Android-Image-Kitchen\android_win_tools\magic
+        ```
 
 4. Flash Magisk:
     - Method 1: Use Magisk Manager to patch ```image-new.img```, copy the patched image to the computer, then reboot your phone to the ```bootloader```, and use ```fastboot``` to flash the patched image into the ```boot`` partition. Reboot.
