@@ -18,8 +18,6 @@ if [ "${img##*\.}" != "img" ]; then
     exit
 fi
 
-echo $img
-
 git submodule foreach 'git clean -xdf'
 git submodule set-branch -b iNux Android-Image-Kitchen
 git submodule update --remote -f
