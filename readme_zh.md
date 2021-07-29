@@ -10,9 +10,9 @@
 
 ## 使用方法
 
-1. 克隆此仓库:
+1. 克隆此仓库, 使用 [GitHub Proxy 代理加速 - 镜像站](https://ghproxy.com/) 代理:
     ```shell
-    git clone --recurse-submodules https://github.com/entr0pia/XPatch.git
+    git clone --recurse-submodules https://ghproxy.com/https://github.com/entr0pia/XPatch.git
     ```
 
 2. 从任何你能获取到 ```boot.img``` 的地方获取 ```boot.img``` 文件. 对于Sony Xperia的固件, 它可能的名字是 ```boot_X-FLASH-ALL-xxxx.sin```.
