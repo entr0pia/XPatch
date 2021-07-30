@@ -22,19 +22,21 @@
     # Linux (WSL2 also tested)
     ./run.sh path_to_boot_img_file
     ```
-    ```shell
-    # Windows (实验性, 不建议)
-    .\run.bat path_to_boot_img_file
-    ```
-    输出: ```image-new.img```
-
-    - 修复: 如果 Windows 下报错为 **Unrecognized format**, 将以下文件的换行符更改为```LF```:
-        ```
-        Android-Image-Kitchen\android_win_tools\androidbootimg.magic
-        Android-Image-Kitchen\android_win_tools\magic
-        ```
+    输出: ```image-new.img```, 已用最新的 Magisk 修补.
 
 4. 刷入 ```magisk```:
-    - 方法一: 用 Magisk Manager 修补 ```image-new.img```, 将修补后的镜像复制到电脑, 然后重启手机到 ```bootloader```, 用 ```fastboot``` 将修补后的镜像刷入 ```boot``` 分区. 重启.
-    - 方法二: 重启手机到 ```bootloader```, 用 ```fastboot``` 将 ```image-new.img``` 刷入 ```boot``` 分区, 然后重启手机到 ```recovery```, 刷入 ```magisk.zip``` 文件. 重启.
+    重启手机到 ```bootloader```, 用 ```fastboot``` 将 ```image-new.img``` 刷入 ```boot``` 分区, 然后重启.
+    > 修复: 某些情况下, 您必须在刷入 ```image-new.img``` 之前用原厂 ```boot.img``` 正常启动一次系统.
+
+- 实验性支持 Windows, **不**建议
+    ```
+    .\run.bat path_to_boot_img_file
+    ```
+    输出: ```image-new.img```, **尚未**用 Magisk 修补. 您需要手动刷入 Magisk.
+
+    > 修复: 如果 Windows 下报错为 **Unrecognized format**, 将以下文件的换行符更改为```LF```:
+    > ```
+    > Android-Image-Kitchen\android_win_tools\androidbootimg.magic
+    > Android-Image-Kitchen\android_win_tools\magic
+    > ```
 

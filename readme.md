@@ -16,21 +16,26 @@ If your Android (especially Android 11) bootloop after patched ```magisk```, as 
 2. Get the ```boot.img``` file from wherever you can get ```boot.img```. For Sony Xperia firmware, it's possibly named as ```boot_X-FLASH-ALL-xxxx.sin```.
 
 3. Use this script to modify the stock ```boot.img```, both Sony Xperia's ```.sin``` and regular ```.img``` files supported:
-    ```
+    ```shell
     # Linux (WSL2 also tested)
     ./run.sh path_to_boot_img_file
     ```
-    ```bat
-    # Windows (Experimentally, not Suggested)
-    .\run.bat path_to_boot_img_file
-    ```
-    Outs: ```image-new.img```
-    - Fix: If the error is shown as **Unrecognized format** on Windows, replace the line endings of the following file by ```LF```:
-        ```
-        Android-Image-Kitchen\android_win_tools\androidbootimg.magic
-        Android-Image-Kitchen\android_win_tools\magic
-        ```
+    
+    Outs: ```image-new.img```, have already patched with the latest Magisk.
 
 4. Flash Magisk:
-    - Method 1: Use Magisk Manager to patch ```image-new.img```, copy the patched image to the computer, then reboot your phone to the ```bootloader```, and use ```fastboot``` to flash the patched image into the ```boot``` partition. Reboot.
-    - Method 2: Reboot your phone to the ```bootloader```, use ```fastboot``` to flash ```image-new.img``` into the ```boot``` partition, then reboot your phone to ```recovery```, flash the ```magisk.zip``` file. Reboot.
+    
+    Reboot your phone to the ```bootloader```, use ```fastboot``` to flash the ```image-new.img``` into the ```boot``` partition, then reboot.
+    > Fix: Sometimes, you must use the stock ```boot.img``` to boot system regularly before flashing the ```image-new.img```.
+
+- Experimentally on Windows, **not** Suggested
+    ```cmd
+    .\run.bat path_to_boot_img_file
+    ```
+    Outs: ```image-new.img```, **not** patched with Magisk yet. You need to flash Magisk manually.
+
+    > Fix: If the error is shown as **Unrecognized format** on Windows, replace the line endings of the following file by ```LF```:
+    > ```
+    > Android-Image-Kitchen\android_win_tools\androidbootimg.magic
+    > Android-Image-Kitchen\android_win_tools\magic
+    > ```
