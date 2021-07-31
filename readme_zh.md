@@ -24,10 +24,6 @@
     ```
     输出: ```image-new.img```, 已用最新的 Magisk 修补.
 
-4. 刷入 ```magisk```:
-    重启手机到 ```bootloader```, 用 ```fastboot``` 将 ```image-new.img``` 刷入 ```boot``` 分区, 然后重启.
-    > 修复: 某些情况下, 您必须在刷入 ```image-new.img``` 之前用原厂 ```boot.img``` 正常启动一次系统.
-
 - 实验性支持 Windows, **不**建议
     ```
     .\run.bat path_to_boot_img_file
@@ -39,4 +35,8 @@
     > Android-Image-Kitchen\android_win_tools\androidbootimg.magic
     > Android-Image-Kitchen\android_win_tools\magic
     > ```
+
+4. 刷入 ```magisk```:
+    重启手机到 ```bootloader```, 用 ```fastboot``` 将 ```image-new.img``` 刷入 ```boot``` 分区, 然后重启.
+    > 修复: 某些情况下, 您必须在刷入 ```image-new.img``` 之前用原厂 ```boot.img``` 正常启动一次系统.
 
