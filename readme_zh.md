@@ -37,6 +37,7 @@
     > ```
 
 4. 刷入 ```magisk```:
+
     重启手机到 ```bootloader```, 用 ```fastboot``` 将 ```image-new.img``` 刷入 ```boot``` 分区, 然后重启.
     > 修复: 某些情况下, 您必须在刷入 ```image-new.img``` 之前用原厂 ```boot.img``` 正常启动一次系统.
 
