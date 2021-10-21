@@ -2,7 +2,7 @@
 #作者: entr0pia (风沐白)
 #文件: run.sh
 #描述: 移除Android固件(如Sony Xpeira 5II)的boot.img中的system_ext分区, 修复patch magisk后的bootloop问题
-#版本: v2.0.1
+#版本: v3.0
 
 img=$1
 workspace=$(pwd)
@@ -18,18 +18,12 @@ function rmSysExt(){
 }
 
 function patchMagisk(){
-    cd "$workspace/magisk_patch"
-    mv ../image-new.img .
-    git fetch --all && git reset --hard origin/master
-    ./boot_patch.sh image-new.img
-    if [ -s "new-boot.img" ]; then
-        mv new-boot.img ../image-new.img
-    else
-        echo -e "\033[37;41m 自动 Patch 失败, 请手动刷入 Magisk \033[0m"
-        echo -e "\033[37;41m Auto Patch Failed, Need to Flash Magisk Manually \033[0m"
-        mv image-new.img ..
-    fi
-    git clean -xdf
+    cd "$workspace"
+    adb wait-for-device
+    adb push magisk_patch /data/local/tmp
+    adb push image-new.img /data/local/tmp/magisk_patch
+    adb shell "sh /data/local/tmp/magisk_patch/boot_patch.sh /data/local/tmp/magisk_patch/image-new.img"
+    adb pull /data/local/tmp/magisk_patch/new-boot.img image-new.img
 }
 
 if [ "${img##*\.}" = "sin" ]; then

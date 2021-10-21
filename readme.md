@@ -16,24 +16,19 @@ If your Android (especially Android 11) bootloop after patched ```magisk```, as 
 2. Get the ```boot.img``` file from wherever you can get ```boot.img```. For Sony Xperia firmware, it's possibly named as ```boot_X-FLASH-ALL-xxxx.sin```.
 
 3. Use this script to modify the stock ```boot.img```, both Sony Xperia's ```.sin``` and regular ```.img``` files supported:
+    - Linux
     ```shell
-    # Linux (WSL2 also tested)
+    # Linux
     ./run.sh path_to_boot_img_file
     ```
     
-    Outs: ```image-new.img```, have already patched with the latest Magisk.
 
-- Experimentally on Windows, **not** Suggested
+    - Windows
     ```cmd
     .\run.bat path_to_boot_img_file
     ```
-    Outs: ```image-new.img```, **not** patched with Magisk yet. You need to flash Magisk manually.
 
-    > Fix: If the error is shown as **Unrecognized format** on Windows, replace the line endings of the following file by ```LF```:
-    > ```
-    > Android-Image-Kitchen\android_win_tools\androidbootimg.magic
-    > Android-Image-Kitchen\android_win_tools\magic
-    > ```
+    - Outs: ```image-new.img```
 
 4. Flash Magisk:
     

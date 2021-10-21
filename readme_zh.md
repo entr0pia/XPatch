@@ -18,23 +18,20 @@
 2. 从任何你能获取到 ```boot.img``` 的地方获取 ```boot.img``` 文件. 对于Sony Xperia的固件, 它可能的名字是 ```boot_X-FLASH-ALL-xxxx.sin```.
 
 3. 使用此脚本修改原厂 ```boot.img```, 支持Sony Xperia的 ```.sin``` 和常规的 ```.img``` 文件:
+    - Linux
     ```shell
-    # Linux (WSL2 also tested)
+    # Linux
     ./run.sh path_to_boot_img_file
     ```
-    输出: ```image-new.img```, 已用最新的 Magisk 修补.
 
-- 实验性支持 Windows, **不**建议
+    - Windows
     ```
     .\run.bat path_to_boot_img_file
     ```
-    输出: ```image-new.img```, **尚未**用 Magisk 修补. 您需要手动刷入 Magisk.
+    
+    - 输出: ```image-new.img```
 
-    > 修复: 如果 Windows 下报错为 **Unrecognized format**, 将以下文件的换行符更改为```LF```:
-    > ```
-    > Android-Image-Kitchen\android_win_tools\androidbootimg.magic
-    > Android-Image-Kitchen\android_win_tools\magic
-    > ```
+   
 
 4. 刷入 ```magisk```:
 
