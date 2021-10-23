@@ -13,12 +13,13 @@ function rmSysExt(){
     find . -name "fstab.*" | xargs sed -i 's/^system_ext/#system_ext/g'
     ./repackimg.sh
     mv image-new.img ..
-    ./cleanup.sh
     git clean -xdf
 }
 
 function patchMagisk(){
     cd "$workspace"
+    echo -e "\033[37;41m Please connect your Android device with adb enabled. \033[0m"
+    echo -e "\033[37;41m 请连接你的安卓设备, 并开启adb调试. \033[0m"
     adb wait-for-device
     adb push magisk_patch /data/local/tmp
     adb push image-new.img /data/local/tmp/magisk_patch

@@ -15,7 +15,9 @@ If your Android (especially Android 11) bootloop after patched ```magisk```, as 
 
 2. Get the ```boot.img``` file from wherever you can get ```boot.img```. For Sony Xperia firmware, it's possibly named as ```boot_X-FLASH-ALL-xxxx.sin```.
 
-3. Use this script to modify the stock ```boot.img```, both Sony Xperia's ```.sin``` and regular ```.img``` files supported:
+3. Connect Android device with adb enabled.
+
+4. Use this script to modify the stock ```boot.img```, both Sony Xperia's ```.sin``` and regular ```.img``` files supported:
     - Linux
     ```shell
     # Linux
@@ -30,7 +32,7 @@ If your Android (especially Android 11) bootloop after patched ```magisk```, as 
 
     - Outs: ```image-new.img```
 
-4. Flash Magisk:
+5. Flash Magisk:
     
     Reboot your phone to the ```bootloader```, use ```fastboot``` to flash the ```image-new.img``` into the ```boot``` partition, then reboot.
     > Fix: Sometimes, you must use the stock ```boot.img``` to boot system regularly before flashing the ```image-new.img```.
