@@ -33,10 +33,9 @@
     
     - 输出: ```image-new.img```
 
-   
+5. 停用所有 Magisk 模块 --  *可选但建议*
 
-5. 刷入 ```magisk```:
+6. 刷入 ```magisk```:
 
     重启手机到 ```bootloader```, 用 ```fastboot``` 将 ```image-new.img``` 刷入 ```boot``` 分区, 然后重启.
-    > 修复: 某些情况下, 您必须在刷入 ```image-new.img``` 之前用原厂 ```boot.img``` 正常启动一次系统. 如果刷入 ```image-new.img``` 后依旧无限重启, 请强行进入安全模式以停用所有 Magisk 模块.
-
+    > 修复: 某些情况下, 您必须在刷入 ```image-new.img``` 之前用原厂 ```boot.img``` 正常启动一次系统.

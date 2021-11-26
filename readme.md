@@ -32,7 +32,9 @@ If your Android (especially Android 11) bootloop after patched ```magisk```, as 
 
     - Outs: ```image-new.img```
 
-5. Flash Magisk:
+5. Diasble all Magisk modules --  *Optional but recommended*
+
+6. Flash Magisk:
     
     Reboot your phone to the ```bootloader```, use ```fastboot``` to flash the ```image-new.img``` into the ```boot``` partition, then reboot.
-    > Fix: Sometimes, you must use the stock ```boot.img``` to boot system regularly before flashing the ```image-new.img```. If still bootloop after flashing ```image-new.img```, force device boot into ```safe mode``` to disable all Magisk modules.
+    > Fix: Sometimes, you must use the stock ```boot.img``` to boot system regularly before flashing the ```image-new.img```.
