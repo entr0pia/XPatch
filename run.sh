@@ -2,7 +2,7 @@
 #作者: entr0pia (风沐白)
 #文件: run.sh
 #描述: 移除Android固件(如Sony Xpeira 5II)的boot.img中的system_ext分区, 修复patch magisk后的bootloop问题
-#版本: v3.0
+#版本: v3.1
 
 img=$1
 workspace=$(pwd)
@@ -45,6 +45,9 @@ git submodule update --remote -f
 if [ ! -d "magisk_patch" ]; then
     git clone https://github.com/entr0pia/magisk_patch.git
 fi
+cd "magisk_patch"
+git fetch
+git pull -f
 
 mv "$img" "$workspace/Android-Image-Kitchen/boot.img"
 rmSysExt

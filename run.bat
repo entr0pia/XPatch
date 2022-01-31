@@ -2,7 +2,7 @@
 ::作者: entr0pia (风沐白)
 ::文件: run.sh
 ::描述: 移除Android固件(如Sony Xpeira 5II)的boot.img中的system_ext分区, 修复patch magisk后的bootloop问题
-::版本: v3.0.0
+::版本: v3.1
 
 set img=%1
 set workspace=%cd%
@@ -42,6 +42,11 @@ git clean -xdf
 :patch
 cd %workspace%
 if not exist magisk_patch git clone https://github.com/entr0pia/magisk_patch.git
+cd magisk_patch
+git fetch
+git pull -f
+cd %workspace%
+
 echo Please connect your Android device with adb enabled.
 echo 请连接你的安卓设备, 并开启adb调试.
 adb wait-for-device
