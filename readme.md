@@ -20,11 +20,9 @@ If your Android (especially Android 11) bootloop after patched ```magisk```, as 
 4. Use this script to modify the stock ```boot.img```, both Sony Xperia's ```.sin``` and regular ```.img``` files supported:
     - Linux
     ```shell
-    # Linux
-    ./run.sh path_to_boot_img_file
+    sudo ./run.sh path_to_boot_img_file
     ```
     
-
     - Windows
     ```cmd
     .\run.bat path_to_boot_img_file

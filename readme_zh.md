@@ -22,8 +22,7 @@
 4. 使用此脚本修改原厂 ```boot.img```, 支持Sony Xperia的 ```.sin``` 和常规的 ```.img``` 文件:
     - Linux
     ```shell
-    # Linux
-    ./run.sh path_to_boot_img_file
+    sudo ./run.sh path_to_boot_img_file
     ```
 
     - Windows

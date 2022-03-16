@@ -2,12 +2,22 @@
 #作者: entr0pia (风沐白)
 #文件: run.sh
 #描述: 移除Android固件(如Sony Xpeira 5II)的boot.img中的system_ext分区, 修复patch magisk后的bootloop问题
-#版本: v3.1
+#版本: v3.2
 
 img=$1
 workspace=$(pwd)
 
-function rmSysExt(){
+git fetch
+git pull -f
+
+user=$(whoami)
+if [ "$user" != "root" ]; then
+    echo -e "\033[37;41m root permission required. \033[0m"
+    echo -e "\033[37;41m 需要 root 权限. \033[0m"
+    exit
+fi
+
+function rmSysExt() {
     cd "$workspace/Android-Image-Kitchen"
     ./unpackimg.sh
     find . -name "fstab.*" | xargs sed -i 's/^system_ext/#system_ext/g'
@@ -16,7 +26,7 @@ function rmSysExt(){
     git clean -xdf
 }
 
-function patchMagisk(){
+function patchMagisk() {
     cd "$workspace"
     echo -e "\033[37;41m Please connect your Android device with adb enabled. \033[0m"
     echo -e "\033[37;41m 请连接你的安卓设备, 并开启adb调试. \033[0m"
@@ -42,13 +52,14 @@ fi
 git submodule foreach 'git clean -xdf'
 git submodule set-branch -b iNux Android-Image-Kitchen
 git submodule update --remote -f
+mv "$img" "$workspace/Android-Image-Kitchen/boot.img"
+rmSysExt
+
+cd "$workspace"
 if [ ! -d "magisk_patch" ]; then
     git clone https://github.com/entr0pia/magisk_patch.git
 fi
 cd "magisk_patch"
 git fetch
 git pull -f
-
-mv "$img" "$workspace/Android-Image-Kitchen/boot.img"
-rmSysExt
 patchMagisk
