@@ -5,8 +5,9 @@
 移除 Android (如 Sony Xpeira 5II) 固件的 ```boot.img``` 中的 ```system_ext``` 分区.
 
 ## 使用场景
+[Magisk v25](https://topjohnwu.github.io/Magisk/changes.html#v250) 已经能够兼容 Sony Xperia, 只需正常地修补 `boot.img` 即可
 
-如果你的 Android (特别是 Android 11) 在刷入 ```magisk``` 后无限重启, 如 [Issue #3752 · topjohnwu/Magisk](https://github.com/topjohnwu/Magisk/issues/3752) 所描述的那样, 可能是由 ```boot.img``` 中的 ```system_ext``` 分区导致的. 尝试使用此脚本来修复问题.
+> 如果你的 Android (特别是 Android 11) 在刷入 ```magisk``` 后无限重启, 如 [Issue #3752 · topjohnwu/Magisk](https://github.com/topjohnwu/Magisk/issues/3752) 所描述的那样, 可能是由 ```boot.img``` 中的 ```system_ext``` 分区导致的. 尝试使用此脚本来修复问题.
 
 ## 使用方法
 

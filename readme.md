@@ -5,7 +5,11 @@
 Remove the ```system_ext``` partition in ```boot.img``` of Android (such as Sony Xpeira 5II) firmware.
 
 ## Scenes
-If your Android (especially Android 11) bootloop after patched ```magisk```, as described in [Issue #3752 · topjohnwu/Magisk](https://github.com/topjohnwu/Magisk/issues/3752), it may be caused by the ```system_ext``` partition in ```boot.img```. Try the script to fix bootloop.
+
+The [Magisk v25](https://topjohnwu.github.io/Magisk/changes.html#v250) is already compatible with Sony Xperia, just need to patch `boot.img` normally. 
+
+> If your Android (especially Android 11) bootloop after patched ```magisk```, as described in [Issue #3752 · topjohnwu/Magisk](https://github.com/topjohnwu/Magisk/issues/3752), it may be caused by the ```system_ext``` partition in ```boot.img```. Try the script to fix bootloop.
+
 
 ## Instructions
 1. Clone this repo:
